@@ -25,8 +25,69 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
+file.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ajith</h1>
+    </header>
+    <div class="gallery">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="Screenshot 2025-05-07 104925.png">
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="Screenshot 2025-05-07 105235.png" >
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="Screenshot 2025-05-07 105410.png">
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="Screenshot 2025-05-07 105448.png" >
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="style.js"></script>
+</body>
+</html>
+```
+style.js
+
+```
+function openModal(element) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+
+    modal.style.display = "flex";
+    modalImage.src = element.querySelector("img").src;
+    caption.textContent = element.querySelector("img").alt;
+}
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+```
+
 
 ## OUTPUT:
+![alt text](<Screenshot 2025-05-07 111745.png>)
+![alt text](<Screenshot 2025-05-07 111756-1.png>)
+![alt text](<Screenshot 2025-05-07 111756.png>)
 
 ## RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
